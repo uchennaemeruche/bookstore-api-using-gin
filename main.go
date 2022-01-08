@@ -37,6 +37,7 @@ func main() {
 	router.POST("/books", controllers.CreateBook)
 	router.PUT("/books/:id", controllers.UpdateBook)
 	router.DELETE("/books/:id", controllers.DeleteBook)
+	router.DELETE("/books", controllers.DeleteAllBooks)
 
 	// File upload
 	router.MaxMultipartMemory = 8 << 20 //8 MiB

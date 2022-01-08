@@ -7,8 +7,9 @@ import (
 type Book struct {
 	gorm.Model
 	// ID     uint   `json:"id" gorm:"primary_key"`
-	Title  string `json:"title" binding:"required"`
-	Author string `json:"author" binding:"required"`
+	Title string `json:"title" binding:"required"`
+	// Author  Author   `json:"author" binding:"required" gorm:"many2many:book_author"`
+	Authors []Author `json:"authors" gorm:"many2many:book_authors;" binding:"required"`
 }
 
 type UpdateBookInput struct {
